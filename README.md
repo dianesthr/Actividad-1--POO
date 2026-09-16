@@ -1,5 +1,3 @@
-# POO-UNAL
-
 ## Universidad Nacional de Colombia
 
 **Nombre del estudiante:** Diana Esther Gonzalez Salgado  
