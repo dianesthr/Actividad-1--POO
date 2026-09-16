@@ -1,17 +1,14 @@
-# Cálculo del salario semanal de un trabajador
+# Ejercicio 12 - Trabajador
+
 nom = input("Ingrese el nombre del trabajador: ")
-nht = int(input("Ingrese el número de horas trabajadas: "))
-vhn = float(input("Ingrese el valor de una hora normal: "))
+nht = float(input("Ingrese el número de horas trabajadas: "))
+vhn = float(input("Ingrese el valor de una hora: "))
 
-if nht > 40:
-    het = nht - 40
+salario_bruto = nht * vhn
+retencion = salario_bruto * 0.125
+salario_neto = salario_bruto - retencion
 
-    if het > 8:
-        hee8 = het - 8
-        salario = 40 * vhn + 16 * vhn + hee8 * 3 * vhn
-    else:
-        salario = 40 * vhn + het * 2 * vhn
-else:
-    salario = nht * vhn
-
-print("EL TRABAJADOR", nom, "DEVENGÓ: $", round(salario))
+print("EL TRABAJADOR:", nom)
+print("SALARIO BRUTO: $", salario_bruto)
+print("RETENCIÓN EN LA FUENTE: $", retencion)
+print("SALARIO NETO: $", salario_neto)
