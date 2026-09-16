@@ -1,22 +1,28 @@
 # Ejercicio 4 - Edades
 
-def calcular_alberto(juan):
-    return juan * 2 / 3
+class Edades:
+    def __init__(self, edad_juan):
+        self.juan = edad_juan
+        self.alberto = self.calcular_alberto()
+        self.ana = self.calcular_ana()
+        self.mama = self.calcular_mama()
 
-def calcular_ana(juan):
-    return juan * 4 / 3
+    def calcular_alberto(self):
+        return self.juan * 2 / 3
 
-def calcular_mama(juan, alberto, ana):
-    return juan + alberto + ana
+    def calcular_ana(self):
+        return self.juan * 4 / 3
 
-print("Ingrese la edad de Juan:")
-juan = float(input())
+    def calcular_mama(self):
+        return self.juan + self.alberto + self.ana
 
-alberto = calcular_alberto(juan)
-ana = calcular_ana(juan)
-mama = calcular_mama(juan, alberto, ana)
+    def mostrar_resultado(self):
+        print("La edad de Juan es:", self.juan)
+        print("La edad de Alberto es:", self.alberto)
+        print("La edad de Ana es:", self.ana)
+        print("La edad de la mamá es:", self.mama)
 
-print("La edad de Juan es:", juan)
-print("La edad de Alberto es:", alberto)
-print("La edad de Ana es:", ana)
-print("La edad de la mamá es:", mama)
+# Programa principal
+edad_juan = float(input("Ingrese la edad de Juan: "))
+edades = Edades(edad_juan)
+edades.mostrar_resultado()
