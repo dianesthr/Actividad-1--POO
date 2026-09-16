@@ -1,14 +1,29 @@
 # Ejercicio 12 - Trabajador
 
-nom = input("Ingrese el nombre del trabajador: ")
-nht = float(input("Ingrese el número de horas trabajadas: "))
-vhn = float(input("Ingrese el valor de una hora: "))
+class Trabajador:
+    def __init__(self, horas=48, valor_hora=5000, porcentaje_retencion=0.125):
+        self.horas = horas
+        self.valor_hora = valor_hora
+        self.porcentaje_retencion = porcentaje_retencion
+        self.salario_bruto = self.calcular_salario_bruto()
+        self.retencion = self.calcular_retencion()
+        self.salario_neto = self.calcular_salario_neto()
 
-salario_bruto = nht * vhn
-retencion = salario_bruto * 0.125
-salario_neto = salario_bruto - retencion
+    def calcular_salario_bruto(self):
+        return self.horas * self.valor_hora
 
-print("EL TRABAJADOR:", nom)
-print("SALARIO BRUTO: $", salario_bruto)
-print("RETENCIÓN EN LA FUENTE: $", retencion)
-print("SALARIO NETO: $", salario_neto)
+    def calcular_retencion(self):
+        return self.salario_bruto * self.porcentaje_retencion
+
+    def calcular_salario_neto(self):
+        return self.salario_bruto - self.retencion
+
+    def mostrar_resultado(self):
+        print("Salario bruto:", self.salario_bruto)
+        print("Retención en la fuente:", self.retencion)
+        print("Salario neto:", self.salario_neto)
+
+
+# Programa principal
+trabajador = Trabajador()
+trabajador.mostrar_resultado()
