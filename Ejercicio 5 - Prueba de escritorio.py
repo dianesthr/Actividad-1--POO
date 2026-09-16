@@ -1,11 +1,22 @@
 # Prueba de escritorio
 
-suma = 0
-x = 20
-suma = suma + x
+class PruebaEscritorio:
+    def __init__(self):
+        self.suma = 0
+        self.x = 20
+        self.y = 40
 
-y = 40
-x = x + y ** 2
-suma = suma + x / y
+    def calcular(self):
+        self.suma = self.suma + self.x
+        self.x = self.x + self.y ** 2
+        self.suma = self.suma + self.x / self.y
+        return self.suma
 
-print("EL VALOR DE LA SUMA ES:", suma)
+    def mostrar_resultado(self):
+        print("EL VALOR DE LA SUMA ES:", self.suma)
+
+
+# Programa principal
+prueba = PruebaEscritorio()
+prueba.calcular()
+prueba.mostrar_resultado()
