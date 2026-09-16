@@ -1,24 +1,24 @@
-# Suma de los primeros N números naturales
+# Ejercicio 17 - Área y longitud de un círculo
 
-class SumaNaturales:
+import math
 
-    def __init__(self, n):
-        self.n = n
 
-    def calcular_suma(self):
-        suma = 0
-        num = 1
+class Circulo:
 
-        while num <= self.n:
-            suma = suma + num
-            num = num + 1
+    def __init__(self, radio):
+        self.radio = radio
 
-        return suma
+    def calcular_area(self):
+        return math.pi * self.radio ** 2
+
+    def calcular_longitud(self):
+        return 2 * math.pi * self.radio
 
 
 # Programa principal
-n = int(input("Ingrese la cantidad de números naturales: "))
+radio = float(input("Ingrese el radio del círculo: "))
 
-suma_naturales = SumaNaturales(n)
+circulo = Circulo(radio)
 
-print("LA SUMA ES:", suma_naturales.calcular_suma())
+print("El área del círculo es:", circulo.calcular_area())
+print("La longitud de la circunferencia es:", circulo.calcular_longitud())
